@@ -11,9 +11,14 @@
   --bg-card-white: #fff;
   --bg-border-white: #e2e8f0;
   --bg-card-dark: #0f172a;
+  --bg-tag: #fba94c;
   --card-purple: #7c3aed;
   --card-title: #1e293b;
   --card-border: #996dff;
+  --card-benefits: #475569;
+  --card-benefits-dark: #cbd5e1;
+  --card-hr-white: #e2e8f0;
+  --card-hr-dark: #334155;
 }
 
 body {
@@ -42,11 +47,19 @@ main article {
   border-radius: 1rem;
   padding: 4.8rem 3.2rem;
   flex-grow: 1;
-  flex-basis: 100px;
+  flex-basis: 30rem;
 }
 
 hr {
   margin: 3.2rem 0;
+}
+
+.bg-white-hr {
+  border-color: var(--card-hr-white);
+}
+
+.bg-dark-hr {
+  border-color: var(--card-hr-dark);
 }
 
 .bg-white {
@@ -138,19 +151,153 @@ hr {
   font-size: 1.6rem;
   line-height: 2.4rem;
   letter-spacing: 0.06em;
-  color: #475569;
+  color: var(--card-benefits);
+}
+
+.benefits div span img {
+  margin-right: 0.8rem;
 }
 
 .benefits div > img {
   cursor: pointer;
 }
 
+#tag-dark {
+  background-color: var(--bg-tag);
+  border-radius: 0.6rem;
+  padding: 0.8rem 1.6rem;
+  position: absolute;
+  top: -2rem;
+  left: 50%;
+  transform: translateX(-50%);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#tag-dark span {
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 1.2rem;
+  line-height: 1.825rem;
+  letter-spacing: 0.06em;
+  color: var(--bg-card-dark);
+}
+
+.bg-dark div p {
+  font-weight: 600;
+  font-size: 1.4rem;
+  line-height: 2.1rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--card-border);
+  margin-bottom: 0.8rem;
+}
+
+.card-title-dark {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 3.2rem;
+}
+
+.card-title-dark h1 {
+  font-weight: 700;
+  font-size: 3.2rem;
+  line-height: 4.9rem;
+  color: var(--bg-default);
+}
+
+.card-title-dark span {
+  font-weight: 400;
+  font-size: 1.8rem;
+  line-height: 2.7rem;
+  color: var(--bg-default);
+}
+
+.card-title-dark span strong {
+  font-weight: 700;
+  font-size: 2.4rem;
+  line-height: 3.7rem;
+  color: var(--bg-default);
+}
+
+.bg-dark div button {
+  width: 100%;
+  height: 5.6rem;
+  padding: 1.6rem 2.4rem;
+  background-color: var(--card-border);
+
+  border-radius: 0.4rem;
+  border: 1px solid var(--card-border);
+  font-weight: 700;
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+  color: var(--bg-card-white);
+  transition: 0.2s;
+}
+
+.bg-dark div button:hover {
+  background-color: var(--card-purple);
+  cursor: pointer;
+}
+
+.benefits-middle {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+.benefits-middle div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.benefits-middle div span {
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+  letter-spacing: 0.06em;
+  color: var(--card-benefits-dark);
+}
+
+.benefits-middle div span img {
+  margin-right: 0.8rem;
+}
+
+.benefits-middle div > img {
+  cursor: pointer;
+}
+
 .bg-dark {
   background-color: var(--bg-card-dark);
+  position: relative;
 }
 
 @media screen and (max-width: 1251px) {
   main {
     flex-wrap: wrap;
+  }
+}
+
+@media screen and (max-width: 1160px) {
+  main article {
+    height: 48rem;
+  }
+
+  .card-title {
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    margin-bottom: 3.2rem;
+  }
+
+  .card-title-dark {
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    margin-bottom: 3.2rem;
   }
 }
